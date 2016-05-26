@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Selection Dialogs</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="icon_hint">Icon</string>
+    <string name="color_hint">Color</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="selectiondialogs_materialdesign500_colors">
+        <item>@color/selectiondialogs_materialdesign500_red</item>
+        <item>@color/selectiondialogs_materialdesign500_pink</item>
+        <item>@color/selectiondialogs_materialdesign500_purple</item>
+        <item>@color/selectiondialogs_materialdesign500_deep_purple</item>
+        <item>@color/selectiondialogs_materialdesign500_indigo</item>
+        <item>@color/selectiondialogs_materialdesign500_blue</item>
+        <item>@color/selectiondialogs_materialdesign500_light_blue</item>
+        <item>@color/selectiondialogs_materialdesign500_cyan</item>
+        <item>@color/selectiondialogs_materialdesign500_teal</item>
+        <item>@color/selectiondialogs_materialdesign500_green</item>
+        <item>@color/selectiondialogs_materialdesign500_light_green</item>
+        <item>@color/selectiondialogs_materialdesign500_lime</item>
+        <item>@color/selectiondialogs_materialdesign500_yellow</item>
+        <item>@color/selectiondialogs_materialdesign500_amber</item>
+        <item>@color/selectiondialogs_materialdesign500_orange</item>
+        <item>@color/selectiondialogs_materialdesign500_deep_orange</item>
+        <item>@color/selectiondialogs_materialdesign500_brown</item>
+        <item>@color/selectiondialogs_materialdesign500_grey</item>
+        <item>@color/selectiondialogs_materialdesign500_blue_grey</item>
+    </integer-array>
+
+    <string-array name="selectiondialogs_materialdesign500_names">
+        <item>@string/selectiondialogs_materialdesign500_red</item>
+        <item>@string/selectiondialogs_materialdesign500_pink</item>
+        <item>@string/selectiondialogs_materialdesign500_purple</item>
+        <item>@string/selectiondialogs_materialdesign500_deep_purple</item>
+        <item>@string/selectiondialogs_materialdesign500_indigo</item>
+        <item>@string/selectiondialogs_materialdesign500_blue</item>
+        <item>@string/selectiondialogs_materialdesign500_light_blue</item>
+        <item>@string/selectiondialogs_materialdesign500_cyan</item>
+        <item>@string/selectiondialogs_materialdesign500_teal</item>
+        <item>@string/selectiondialogs_materialdesign500_green</item>
+        <item>@string/selectiondialogs_materialdesign500_light_green</item>
+        <item>@string/selectiondialogs_materialdesign500_lime</item>
+        <item>@string/selectiondialogs_materialdesign500_yellow</item>
+        <item>@string/selectiondialogs_materialdesign500_amber</item>
+        <item>@string/selectiondialogs_materialdesign500_orange</item>
+        <item>@string/selectiondialogs_materialdesign500_deep_orange</item>
+        <item>@string/selectiondialogs_materialdesign500_brown</item>
+        <item>@string/selectiondialogs_materialdesign500_grey</item>
+        <item>@string/selectiondialogs_materialdesign500_blue_grey</item>
+    </string-array>
+
+    <string-array name="selectiondialogs_materialdesign500_ids">
+        <item>@string/selectiondialogs_materialdesign500_id_red</item>
+        <item>@string/selectiondialogs_materialdesign500_id_pink</item>
+        <item>@string/selectiondialogs_materialdesign500_id_purple</item>
+        <item>@string/selectiondialogs_materialdesign500_id_deep_purple</item>
+        <item>@string/selectiondialogs_materialdesign500_id_indigo</item>
+        <item>@string/selectiondialogs_materialdesign500_id_blue</item>
+        <item>@string/selectiondialogs_materialdesign500_id_light_blue</item>
+        <item>@string/selectiondialogs_materialdesign500_id_cyan</item>
+        <item>@string/selectiondialogs_materialdesign500_id_teal</item>
+        <item>@string/selectiondialogs_materialdesign500_id_green</item>
+        <item>@string/selectiondialogs_materialdesign500_id_light_green</item>
+        <item>@string/selectiondialogs_materialdesign500_id_lime</item>
+        <item>@string/selectiondialogs_materialdesign500_id_yellow</item>
+        <item>@string/selectiondialogs_materialdesign500_id_amber</item>
+        <item>@string/selectiondialogs_materialdesign500_id_orange</item>
+        <item>@string/selectiondialogs_materialdesign500_id_deep_orange</item>
+        <item>@string/selectiondialogs_materialdesign500_id_brown</item>
+        <item>@string/selectiondialogs_materialdesign500_id_grey</item>
+        <item>@string/selectiondialogs_materialdesign500_id_blue_grey</item>
+    </string-array>
+
+</resources>
