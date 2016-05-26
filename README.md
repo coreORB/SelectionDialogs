@@ -1,6 +1,10 @@
 # Selection Dialogs
 Selection Dialogs is Android library allowing quickly create colors and icons selection dialogs, and providing simple views to display selected items.
 
+![Screenshot_Fragment](https://github.com/ZaYeR-PL/SelectionDialogs/blob/master/screens/Screenshot_Fragment.png?raw=true)
+![Screenshot_ColorSelectionDialog](https://github.com/ZaYeR-PL/SelectionDialogs/blob/master/screens/Screenshot_ColorSelectionDialog.png?raw=true)
+![Screenshot_IconSelectionDialog](https://github.com/ZaYeR-PL/SelectionDialogs/blob/master/screens/Screenshot_IconSelectionDialog.png?raw=true)
+
 ## Download
 Comming soon...
 
