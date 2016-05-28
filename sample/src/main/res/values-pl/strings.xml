@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Selection Dialogs Sample</string>
+    <string name="action_settings">Ustawienia</string>
+
+    <string name="icon_hint">Ikona</string>
+    <string name="color_hint">Kolor</string>
+    <string name="text_hint">Tekst</string>
+    <string name="text_input_dialog_title">Wprowadź trochę tekstu…</string>
+</resources>

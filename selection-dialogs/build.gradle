@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'selection-dialogs'
+
+    publishedGroupId = 'pl.coreorb'
+    libraryName = 'Selection Dialogs'
+    artifact = 'selection-dialogs'
+
+    libraryDescription = 'Selection Dialogs is Android library allowing quickly create colors and icons selection dialogs, and providing simple views to display selected items.'
+
+    siteUrl = 'https://github.com/ZaYeR-PL/SelectionDialogs'
+    gitUrl = 'https://github.com/ZaYeR-PL/SelectionDialogs.git'
+
+    libraryVersion = '0.9.0'
+
+    developerId = 'zayer-pl'
+    developerName = 'Rafał Ziemlanka'
+    developerEmail = 'rafal.ziemlanka@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 2
+        versionName "0.9.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.android.support:support-annotations:23.3.0'
+}
+
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'

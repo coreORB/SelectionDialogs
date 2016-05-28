@@ -1,19 +1,22 @@
 package pl.coreorb.selectiondialogssample;
 
-import android.support.v4.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
+import pl.coreorb.selectiondialogs.data.SelectableColor;
+import pl.coreorb.selectiondialogs.data.SelectableIcon;
 import pl.coreorb.selectiondialogs.dialogs.ColorSelectDialog;
-import pl.coreorb.selectiondialogs.data.SelectionDialogsColor;
-import pl.coreorb.selectiondialogs.data.SelectionDialogsIcon;
 import pl.coreorb.selectiondialogs.dialogs.IconSelectDialog;
-import pl.coreorb.selectiondialogs.views.SelectedColorView;
-import pl.coreorb.selectiondialogs.views.SelectedIconView;
+import pl.coreorb.selectiondialogs.utils.ColorPalettes;
+import pl.coreorb.selectiondialogs.views.SelectedItemView;
 
 /**
  * Fragment for sample app. This one is more interesting :)
@@ -23,9 +26,11 @@ public class MainActivityFragment extends Fragment implements IconSelectDialog.O
 
     private static final String TAG_SELECT_ICON_DIALOG = "TAG_SELECT_ICON_DIALOG";
     private static final String TAG_SELECT_COLOR_DIALOG = "TAG_SELECT_COLOR_DIALOG";
+    private static final String TAG_SELECT_TEXT_DIALOG = "TAG_SELECT_TEXT_DIALOG";
 
-    private SelectedIconView iconSIV;
-    private SelectedColorView colorSIV;
+    private SelectedItemView iconSIV;
+    private SelectedItemView colorSIV;
+    private SelectedItemView textSIV;
 
     public MainActivityFragment() {
     }
@@ -35,7 +40,7 @@ public class MainActivityFragment extends Fragment implements IconSelectDialog.O
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        iconSIV = (SelectedIconView) rootView.findViewById(R.id.icon_siv);
+        iconSIV = (SelectedItemView) rootView.findViewById(R.id.icon_siv);
         iconSIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,11 +48,19 @@ public class MainActivityFragment extends Fragment implements IconSelectDialog.O
             }
         });
 
-        colorSIV = (SelectedColorView) rootView.findViewById(R.id.color_siv);
+        colorSIV = (SelectedItemView) rootView.findViewById(R.id.color_siv);
         colorSIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showColorSelectDialog();
+            }
+        });
+
+        textSIV = (SelectedItemView) rootView.findViewById(R.id.text_siv);
+        textSIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTextInputDialog();
             }
         });
 
@@ -65,25 +78,24 @@ public class MainActivityFragment extends Fragment implements IconSelectDialog.O
         if (colorDialog != null) {
             colorDialog.setOnColorSelectedListener(this);
         }
-
     }
 
     /**
-     * Displays selected icon in {@link SelectedIconView} view.
-     * @param selectedItem selected {@link SelectionDialogsIcon} object containing: id, name and drawable resource id.
+     * Displays selected icon in {@link SelectedItemView} view.
+     * @param selectedItem selected {@link SelectableIcon} object containing: id, name and drawable resource id.
      */
     @Override
-    public void onIconSelected(SelectionDialogsIcon selectedItem) {
-        iconSIV.setItem(selectedItem);
+    public void onIconSelected(SelectableIcon selectedItem) {
+        iconSIV.setSelectedIcon(selectedItem);
     }
 
     /**
-     * Displays selected color in {@link SelectedColorView} view.
-     * @param selectedItem selected {@link SelectionDialogsColor} object containing: id, name and color value.
+     * Displays selected color in {@link SelectedItemView} view.
+     * @param selectedItem selected {@link SelectableColor} object containing: id, name and color value.
      */
     @Override
-    public void onColorSelected(SelectionDialogsColor selectedItem) {
-        colorSIV.setItem(selectedItem);
+    public void onColorSelected(SelectableColor selectedItem) {
+        colorSIV.setSelectedColor(selectedItem);
     }
 
     /**
@@ -103,21 +115,40 @@ public class MainActivityFragment extends Fragment implements IconSelectDialog.O
      */
     private void showColorSelectDialog() {
         new ColorSelectDialog.Builder(getContext())
-                .setColorsMaterialDesign500()
+                .setColors(ColorPalettes.loadMaterialDesignColors500(getContext(), false))
                 .setTitle(R.string.selectiondialogs_color_dialog_title)
+                .setSortColorsByName(true)
                 .setOnColorSelectedListener(this)
                 .build().show(getFragmentManager(), TAG_SELECT_COLOR_DIALOG);
+    }
+
+    private void showTextInputDialog() {
+        final EditText textET = new EditText(getContext());
+
+        new AlertDialog.Builder(getContext())
+                .setTitle(R.string.text_input_dialog_title)
+                .setView(textET)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        textSIV.setSelectedName(textET.getText().toString());
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .show();
     }
 
     /**
      * Creates sample ArrayList of icons to display in dialog.
      * @return sample icons
      */
-    public static ArrayList<SelectionDialogsIcon> sampleIcons() {
-        ArrayList<SelectionDialogsIcon> selectionDialogsColors = new ArrayList<>();
-        selectionDialogsColors.add(new SelectionDialogsIcon("puzzle", "Puzzle",  R.drawable.sample_icon_puzzle));
-        selectionDialogsColors.add(new SelectionDialogsIcon("android", "Android", R.drawable.sample_icon_android));
-        selectionDialogsColors.add(new SelectionDialogsIcon("bookmark", "Bookmark", R.drawable.sample_icon_bookmark));
+    private static ArrayList<SelectableIcon> sampleIcons() {
+        ArrayList<SelectableIcon> selectionDialogsColors = new ArrayList<>();
+        selectionDialogsColors.add(new SelectableIcon("puzzle", "Puzzle", R.drawable.sample_icon_puzzle));
+        selectionDialogsColors.add(new SelectableIcon("android", "Android", R.drawable.sample_icon_android));
+        selectionDialogsColors.add(new SelectableIcon("bookmark", "Bookmark", R.drawable.sample_icon_bookmark));
         return selectionDialogsColors;
     }
 }

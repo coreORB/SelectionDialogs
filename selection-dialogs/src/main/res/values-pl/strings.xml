@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="selectiondialogs_app_name">Selection Dialogs</string>
+
+    <!-- dialogs -->
+    <string name="selectiondialogs_icon_dialog_title">Wybierz ikonę…</string>
+    <string name="selectiondialogs_color_dialog_title">Wybierz kolor…</string>
+
+    <!-- selected item view -->
+    <string name="selectiondialogs_default_hint">podpowiedź</string>
+    <string name="selectiondialogs_default_item_name">tekst</string>
+
+    <!-- Material Design colors names (500) -->
+    <string name="selectiondialogs_materialdesign500_red">Czerwony</string>
+    <string name="selectiondialogs_materialdesign500_pink">Różowy</string>
+    <string name="selectiondialogs_materialdesign500_purple">Fioletowy</string>
+    <string name="selectiondialogs_materialdesign500_deep_purple">Głęboki fiolet</string>
+    <string name="selectiondialogs_materialdesign500_indigo">Indygo</string>
+    <string name="selectiondialogs_materialdesign500_blue">Niebieski</string>
+    <string name="selectiondialogs_materialdesign500_light_blue">Jasny niebieski</string>
+    <string name="selectiondialogs_materialdesign500_cyan">Niebieskozielony</string>
+    <string name="selectiondialogs_materialdesign500_teal">Turkusowy</string>
+    <string name="selectiondialogs_materialdesign500_green">Zielony</string>
+    <string name="selectiondialogs_materialdesign500_light_green">Jasny zielony</string>
+    <string name="selectiondialogs_materialdesign500_lime">Limonkowy</string>
+    <string name="selectiondialogs_materialdesign500_yellow">Żółty</string>
+    <string name="selectiondialogs_materialdesign500_amber">Bursztynowy</string>
+    <string name="selectiondialogs_materialdesign500_orange">Pomarańczowy</string>
+    <string name="selectiondialogs_materialdesign500_deep_orange">Głęboka pomarańcz</string>
+    <string name="selectiondialogs_materialdesign500_brown">Brązowy</string>
+    <string name="selectiondialogs_materialdesign500_grey">Szary</string>
+    <string name="selectiondialogs_materialdesign500_blue_grey">Niebiesko-szary</string>
+
+    <!-- other -->
+    <string name="selectiondialogs_undefined">#undefined#</string>
+
+</resources>

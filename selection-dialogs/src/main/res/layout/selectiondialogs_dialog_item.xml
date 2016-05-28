@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:id="@+id/selectiondialogs_icon_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:tint="@color/selectiondialogs_default_item_color"
+            android:src="@drawable/selectiondialogs_default_item_icon" />
+
+        <TextView
+            android:id="@+id/selectiondialogs_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="72dp"
+            android:layout_marginStart="72dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/selectiondialogs_textPrimary"
+            tools:text="name"/>
+
+    </RelativeLayout>
+
+</com.balysv.materialripple.MaterialRippleLayout>

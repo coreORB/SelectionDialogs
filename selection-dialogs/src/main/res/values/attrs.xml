@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SelectedItemView">
+        <attr name="hint" format="string"  />
+        <attr name="itemId" format="string" />
+        <attr name="itemIcon" format="reference" />
+        <attr name="itemColor" format="color|integer" />
+        <attr name="itemName" format="string" />
+    </declare-styleable>
+
+</resources>
