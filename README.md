@@ -1,4 +1,6 @@
 # Selection Dialogs
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SelectionDialogs-green.svg?style=true)](https://android-arsenal.com/details/1/3651)
+
 Selection Dialogs is Android library allowing quickly create colors and icons selection dialogs, and providing simple views to display selected items.
 
 Current version is 0.9.1
