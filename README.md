@@ -162,7 +162,7 @@ One way to handle this is to set listener to `this`(Activity/Fragment) and re-se
     }
 ```
 
-For complete implementation take a look at [MainActivityFragment.java](MainActivityFragment.java).
+For complete implementation take a look at [MainActivityFragment.java](sample/src/main/java/pl/coreorb/selectiondialogssample/MainActivityFragment.java).
 
 ## JavaDoc
 Coming soon...
