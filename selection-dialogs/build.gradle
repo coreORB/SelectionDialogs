@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/ZaYeR-PL/SelectionDialogs'
     gitUrl = 'https://github.com/ZaYeR-PL/SelectionDialogs.git'
 
-    libraryVersion = '0.9.0'
+    libraryVersion = '0.9.1'
 
     developerId = 'zayer-pl'
     developerName = 'Rafał Ziemlanka'

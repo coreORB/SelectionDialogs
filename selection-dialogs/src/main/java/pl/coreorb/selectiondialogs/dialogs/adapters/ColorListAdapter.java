@@ -38,7 +38,7 @@ public class ColorListAdapter extends ArrayAdapter<SelectableColor> {
 
         SelectableColor item = getItem(position);
         ViewHolder holder = (ViewHolder) rootView.getTag();
-        holder.iconIV.setColorFilter(item.getColor());
+        holder.iconIV.setColorFilter(item.getColorValue());
         holder.nameTV.setText(item.getName());
 
         return rootView;

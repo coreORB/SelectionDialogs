@@ -1,43 +1,53 @@
 package pl.coreorb.selectiondialogs.data;
 
+import android.content.Context;
 import android.os.Parcel;
+import android.support.annotation.ColorInt;
+import android.support.annotation.StringRes;
 
 /**
- * Object defining selectable color in this library.
+ * Object defining selectable colorValue in this library.
  */
 public class SelectableColor extends PrimitiveSelectableItem {
 
-    private int color;
+    private
+    @ColorInt
+    int colorValue;
 
     public SelectableColor() {
         super();
-        color = 0;
+        colorValue = 0;
     }
 
     public SelectableColor(Parcel in) {
         super(in);
-        color = in.readInt();
+        colorValue = in.readInt();
     }
 
-    public SelectableColor(String id, String name, int color) {
+    public SelectableColor(String id, String name, @ColorInt int colorValue) {
         super(id, name);
-        this.color = color;
+        this.colorValue = colorValue;
+    }
+
+    public SelectableColor(Context context, @StringRes int idResId, @StringRes int nameResId, @ColorInt int colorValue) {
+        super(context, idResId, nameResId);
+        this.colorValue = colorValue;
     }
 
     /**
-     * Returns color integer value of this color.
-     * @return color integer value of this color
+     * Returns colorValue integer value of this colorValue.
+     * @return colorValue integer value of this colorValue
      */
-    public int getColor() {
-        return color;
+    public int getColorValue() {
+        return colorValue;
     }
 
     /**
-     * Sets color integer value of this color.
-     * @param color color integer value to use as this color value
+     * Sets colorValue integer value of this colorValue.
+     * @param colorValue colorValue integer value to use as this colorValue value
      */
-    public void setColor(int color) {
-        this.color = color;
+    public void setColorValue(int colorValue) {
+        this.colorValue = colorValue;
     }
 
     @Override
@@ -45,14 +55,14 @@ public class SelectableColor extends PrimitiveSelectableItem {
         return "SelectableColor{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", color=" + color +
+                ", colorValue=" + colorValue +
                 '}';
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
-        dest.writeInt(color);
+        dest.writeInt(colorValue);
     }
 
     public static final Creator<SelectableColor> CREATOR = new Creator<SelectableColor>() {

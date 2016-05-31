@@ -1,7 +1,9 @@
 package pl.coreorb.selectiondialogs.data;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 
 import pl.coreorb.selectiondialogs.R;
 
@@ -24,6 +26,11 @@ public class SelectableIcon extends PrimitiveSelectableItem {
 
     public SelectableIcon(String id, String name, @DrawableRes int drawableResId) {
         super(id, name);
+        this.drawableResId = drawableResId;
+    }
+
+    public SelectableIcon(Context context, @StringRes int idResId, @StringRes int nameResId, @DrawableRes int drawableResId) {
+        super(context, idResId, nameResId);
         this.drawableResId = drawableResId;
     }
 

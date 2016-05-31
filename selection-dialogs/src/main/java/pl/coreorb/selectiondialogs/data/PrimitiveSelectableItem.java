@@ -1,7 +1,9 @@
 package pl.coreorb.selectiondialogs.data;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.StringRes;
 
 /**
  * Class of primitive object used in every dialog in this library.
@@ -24,6 +26,11 @@ public abstract class PrimitiveSelectableItem implements Parcelable {
     public PrimitiveSelectableItem(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public PrimitiveSelectableItem(Context context, @StringRes int idResId, @StringRes int nameResId) {
+        this.id = context.getString(idResId);
+        this.name = context.getString(nameResId);
     }
 
     /**

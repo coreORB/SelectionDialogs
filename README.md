@@ -1,7 +1,7 @@
 # Selection Dialogs
 Selection Dialogs is Android library allowing quickly create colors and icons selection dialogs, and providing simple views to display selected items.
 
-Current version is 0.9.1
+Current version is 0.9.1b
 
 ![Screenshot_Fragment](https://github.com/ZaYeR-PL/SelectionDialogs/blob/master/screens/Screenshot_Fragment.png?raw=true)
 ![Screenshot_ColorSelectionDialog](https://github.com/ZaYeR-PL/SelectionDialogs/blob/master/screens/Screenshot_ColorSelectionDialog.png?raw=true)
@@ -132,7 +132,37 @@ Library delivers Utils class with convert methods:
 
 
 ##Handling device configuration changes
-Coming soon...  
+If device is rotated with dialog opened, dialog will stay opened, but parent Activity/Fragment will no longer receive callback with selected item.
+
+One way to handle this is to set listener to `this`(Activity/Fragment) and re-set listener in `onResume()` like this:
+
+```java
+    public class MyFragment extends Fragment implements IconSelectDialog.OnIconSelectedListener {
+        private static final String TAG_SELECT_ICON_DIALOG = "TAG_SELECT_ICON_DIALOG";
+        
+        //fragment code
+        
+        private void showIconSelectDialog() {
+            //set listener to this
+            new IconSelectDialog.Builder(getContext())
+                    .setIcons(sampleIcons())
+                    .setOnIconSelectedListener(this)
+                    .build().show(getFragmentManager(), TAG_SELECT_ICON_DIALOG);
+        }
+        
+        @Override
+        public void onResume() {
+            super.onResume();
+            //find dialog and set listener
+            IconSelectDialog iconDialog = (IconSelectDialog) getFragmentManager().findFragmentByTag(TAG_SELECT_ICON_DIALOG);
+            if (iconDialog != null) {
+                iconDialog.setOnIconSelectedListener(this);
+            }
+        }
+    }
+```
+
+For complete implementation take a look at [MainActivityFragment.java](MainActivityFragment.java).
 
 ## JavaDoc
 Coming soon...
@@ -142,6 +172,10 @@ Coming soon...
 [Apache License, Version 2.0](LICENCE).
 
 ## Change log
+
+### 0.9.1b
+- "Handling device configuration changes" chapter filled
+- added new constructors to SelectableColor and SelectableIcon
 
 ### 0.9.1
 - SelectedIconView and SelectedColorView simplified into one view: SelectedItemView

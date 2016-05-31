@@ -216,9 +216,9 @@ public class SelectedItemView extends LinearLayout {
     public void setSelectedColor(SelectableColor color) {
         currentItemId = color.getId();
         currentItemName = color.getName();
-        currentItemColor = color.getColor();
+        currentItemColor = color.getColorValue();
 
-        iconIV.setColorFilter(color.getColor());
+        iconIV.setColorFilter(color.getColorValue());
         nameTV.setText(color.getName());
     }
 
